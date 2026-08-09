@@ -13,6 +13,7 @@ RUN apt-get update && apt-get install -y \
     libxml2-dev
 
 # Install PHP extensions
+RUN apt-get update && apt-get install -y libpq-dev
 RUN docker-php-ext-install pdo pdo_pgsql mbstring xml
 
 # Install Composer
