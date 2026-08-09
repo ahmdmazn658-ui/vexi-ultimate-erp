@@ -56,8 +56,7 @@ export default function App() {
           <Route path=":slug" element={<ResourceRoute />} />
         </Route>
 
-        <Route path="*" element={<Navigate to="/" replace />} />
-      </Routes>
+      <Route path="*" element={<Navigate to="/login" replace />} />
     </Suspense>
   )
 }
