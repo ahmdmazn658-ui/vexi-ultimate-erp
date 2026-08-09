@@ -24,7 +24,7 @@ WORKDIR /var/www
 
 # Copy project files
 COPY . .
-
+RUN mkdir -p bootstrap/cache storage/framework/{cache,sessions,views} storage/logs && chmod -R 775 bootstrap/cache storage
 # Install dependencies
 RUN composer install --no-dev --optimize-autoloader
 
