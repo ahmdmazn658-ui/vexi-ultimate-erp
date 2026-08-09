@@ -720,9 +720,6 @@ return [
             'storage_provider' => ['type' => 'string', 'default' => 's3', 'label_ar' => 'مزود التخزين', 'label_en' => 'Storage Provider', 'options' => ['s3', 'gcs', 'azure', 'local']],
         ],
     ],
-
-
-
     // ══════════════════════════════════════════════════════════════════════
     // 🇸🇦 LABOR MARKET - سوق العمل السعودي
     // ══════════════════════════════════════════════════════════════════════
@@ -918,7 +915,6 @@ return [
             'retention_days' => ['type'=>'integer','default'=>2555,'label_ar'=>'مدة الاحتفاظ بالسجلات','label_en'=>'Record Retention Days'],
         ],
     ],
-,
     'ai_module_defaults' => [
         'general' => [
             'enabled' => ['type'=>'boolean','default'=>true,'label_ar'=>'تفعيل AI في الموديولات','label_en'=>'Enable AI Across Modules'],
