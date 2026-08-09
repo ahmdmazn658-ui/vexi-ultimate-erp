@@ -52,6 +52,7 @@ export interface Column {
   key: string
   label: string
   labelAr?: string
+  type?: string
   format?: ColumnFormat
 }
 
@@ -82,6 +83,7 @@ export interface ItemsConfig {
 
 export interface Resource {
   slug: string
+  key?: string
   title: string
   subtitle?: string
   endpoint: string
