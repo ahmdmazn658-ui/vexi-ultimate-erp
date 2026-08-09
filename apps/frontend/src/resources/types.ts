@@ -54,6 +54,7 @@ export interface Column {
   labelAr?: string
   type?: string
   format?: ColumnFormat
+  [key: string]: any
 }
 
 export interface RowAction {
@@ -102,5 +103,6 @@ export interface Resource {
   refreshes?: string[]
   /** الإنشاء بيستخدم multipart بدل JSON (شاشة المستندات) */
   multipart?: boolean
+  [key: string]: any
 }
 export type ResourceConfig = Resource;
