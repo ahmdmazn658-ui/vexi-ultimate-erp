@@ -840,8 +840,6 @@ return [
             'insurance_required' => ['type' => 'boolean', 'default' => true, 'label_ar' => 'إلزام التأمين', 'label_en' => 'Insurance Required'],
         ],
     ],
-
-,
     'data_import_export' => [
         'general' => [
             'max_file_size_mb' => ['type'=>'integer','default'=>50,'label_ar'=>'أقصى حجم للملف','label_en'=>'Max File Size MB'],
@@ -913,7 +911,6 @@ return [
             'track_exports' => ['type'=>'boolean','default'=>true,'label_ar'=>'تسجيل التصدير','label_en'=>'Track Exports'],
         ],
     ],
-,
     'additional_modules' => [
         'general' => [
             'enabled' => ['type'=>'boolean','default'=>true,'label_ar'=>'تفعيل الموديولات الإضافية','label_en'=>'Enable Additional Modules'],
