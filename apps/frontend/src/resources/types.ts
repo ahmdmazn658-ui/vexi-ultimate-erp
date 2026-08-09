@@ -51,6 +51,7 @@ export interface Column {
   /** بيقبل مسار متداخل: `customer.name` */
   key: string
   label: string
+  labelAr?: string
   format?: ColumnFormat
 }
 
