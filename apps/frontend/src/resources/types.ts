@@ -105,4 +105,12 @@ export interface Resource {
   multipart?: boolean
   [key: string]: any
 }
-export type ResourceConfig = Resource;
+export interface ResourceConfig {
+  key: string
+  label: string
+  labelAr: string
+  endpoint: string
+  icon: string
+  columns: Column[]
+}
+
