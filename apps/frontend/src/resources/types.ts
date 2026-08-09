@@ -101,8 +101,3 @@ export interface Resource {
   multipart?: boolean
 }
 export type ResourceConfig = Resource;
-/** الإنشاء بيستخدم multipart بدل JSON (شاشة المستندات) */
-  multipart?: boolean
-}
-
-export type ResourceConfig = Resource;
