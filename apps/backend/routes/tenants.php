@@ -1,0 +1,3 @@
+<?php
+use Illuminate\Support\Facades\Route;use App\Http\Controllers\Api\TenantController as C;
+Route::middleware(['auth:sanctum','tenant'])->prefix('v1/tenant')->group(function(){Route::get('plans',[C::class,'plans']);Route::get('/',[C::class,'current']);Route::put('/',[C::class,'update']);Route::get('modules',[C::class,'modules']);Route::put('modules/{module}',[C::class,'setModule']);Route::get('requirements',[C::class,'requirements']);Route::post('requirements',[C::class,'addRequirement']);Route::put('requirements/{requirement}',[C::class,'updateRequirement']);Route::get('subscription',[C::class,'subscription']);});

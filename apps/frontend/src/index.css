@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+/* Tailwind 4 — التخصيص بيتم في CSS مباشرة، مفيش tailwind.config.js */
+@theme {
+  --font-sans: "IBM Plex Sans Arabic", "Segoe UI", system-ui, sans-serif;
+
+  --color-brand-50: oklch(0.97 0.02 165);
+  --color-brand-100: oklch(0.93 0.05 165);
+  --color-brand-300: oklch(0.78 0.11 165);
+  --color-brand-500: oklch(0.62 0.13 165);
+  --color-brand-600: oklch(0.54 0.12 165);
+  --color-brand-700: oklch(0.45 0.10 165);
+
+  --color-ink-400: oklch(0.62 0.01 260);
+  --color-ink-600: oklch(0.45 0.02 260);
+  --color-ink-900: oklch(0.24 0.03 260);
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+  }
+
+  body {
+    @apply bg-slate-50 text-ink-900 antialiased;
+  }
+
+  /* الأرقام دايماً LTR حتى داخل نص عربي */
+  .num {
+    direction: ltr;
+    unicode-bidi: embed;
+    font-variant-numeric: tabular-nums;
+  }
+}

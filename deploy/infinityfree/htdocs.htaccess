@@ -1,0 +1,50 @@
+# ═══════════════════════════════════════════════════════════════
+#  htdocs/.htaccess — يتحط في جذر htdocs على الاستضافة المشتركة
+# ═══════════════════════════════════════════════════════════════
+#  الملف ده نسخة من public/.htaccess بتاع Laravel، مع تعديلين:
+#   1) `Options -MultiViews` متشالت لأن بعض السيرفرات المشتركة بتمنعها
+#      وبترمي "Internal Server Error" بدل ما تتجاهلها.
+#   2) اتضافت هيدرات كاش للملفات الثابتة، لأن الاستضافة المجانية
+#      بتحسب كل طلب من حد الـ 30,000 طلب اليومي.
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    # لو الاستضافة بتشتغل على مسار فرعي، غيّر السطر ده لـ: RewriteBase /subfolder
+    RewriteBase /
+
+    # هيدر Authorization لازم يتمرر يدويًا — من غيره Sanctum مش هيشوف التوكن
+    # وكل النداءات هترجع 401. ده أكتر خطأ بيحصل عند النشر على أباتشي.
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # إزالة السلاش الزايد من آخر الرابط
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # أي ملف موجود فعلاً (assets الواجهة) يتقدّم زي ما هو،
+    # وأي حاجة تانية تروح لـ Laravel
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# الملفات المبنية بـ Vite أسماؤها فيها hash، فالكاش الطويل آمن عليها
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 month"
+    ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
+
+# index.html لازم ما يتكاش عشان أي نشر جديد يوصل فورًا
+<Files "index.html">
+    <IfModule mod_headers.c>
+        Header set Cache-Control "no-cache, must-revalidate"
+    </IfModule>
+</Files>
+
+# منع تصفح المجلدات
+Options -Indexes

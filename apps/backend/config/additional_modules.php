@@ -1,0 +1,22 @@
+<?php
+return ['catalog'=>[
+ ['key'=>'analytics','name_ar'=>'التحليلات وذكاء الأعمال','name_en'=>'Analytics & BI','records'=>['dashboards','metrics','insights']],
+ ['key'=>'maintenance','name_ar'=>'الصيانة وإدارة الأصول','name_en'=>'Maintenance & Asset Service','records'=>['work_orders','preventive_plans','spare_parts']],
+ ['key'=>'logistics','name_ar'=>'اللوجستيات وسلاسل الإمداد','name_en'=>'Logistics & Supply Chain','records'=>['shipments','routes','carriers']],
+ ['key'=>'transportation','name_ar'=>'النقل والتوصيل','name_en'=>'Transportation & Delivery','records'=>['trips','delivery_orders','proof_of_delivery']],
+ ['key'=>'legal','name_ar'=>'الشؤون القانونية','name_en'=>'Legal Management','records'=>['cases','legal_documents','hearings']],
+ ['key'=>'healthcare','name_ar'=>'الرعاية الصحية','name_en'=>'Healthcare','records'=>['patients','appointments','medical_records','claims']],
+ ['key'=>'education','name_ar'=>'التعليم والتدريب','name_en'=>'Education & Training','records'=>['students','admissions','courses','grades']],
+ ['key'=>'insurance','name_ar'=>'التأمين والمطالبات','name_en'=>'Insurance & Claims','records'=>['policies','claims','underwriting']],
+ ['key'=>'engineering_office','name_ar'=>'المكتب الهندسي','name_en'=>'Engineering Office','records'=>['drawings','rfis','submittals']],
+ ['key'=>'governance','name_ar'=>'الحوكمة وإدارة المخاطر','name_en'=>'Governance, Risk & Compliance','records'=>['risks','controls','policies','audits']],
+ ['key'=>'security','name_ar'=>'الأمن والصلاحيات','name_en'=>'Security & Access','records'=>['access_logs','ip_rules','security_events']],
+ ['key'=>'performance','name_ar'=>'إدارة الأداء والأهداف','name_en'=>'Performance & OKRs','records'=>['goals','reviews','kpis','improvement_plans']],
+ ['key'=>'training','name_ar'=>'التدريب والتطوير','name_en'=>'Learning & Development','records'=>['courses','enrollments','certificates']],
+ ['key'=>'blockchain','name_ar'=>'السجل الموثق وBlockchain','name_en'=>'Blockchain & Verifiable Records','records'=>['certificates','hashes','transactions']],
+ ['key'=>'plugin_marketplace','name_ar'=>'متجر الإضافات','name_en'=>'Plugin Marketplace','records'=>['plugins','licenses','subscriptions']],
+ ['key'=>'data_lake','name_ar'=>'مستودع البيانات','name_en'=>'Data Lake & Master Data','records'=>['datasets','data_quality_rules','sync_jobs']],
+ ['key'=>'chatops','name_ar'=>'محادثات العمل وChatOps','name_en'=>'ChatOps & Collaboration','records'=>['channels','messages','commands']],
+ ['key'=>'digital_twin','name_ar'=>'التوأم الرقمي','name_en'=>'Digital Twin','records'=>['assets','telemetry','simulations']],
+ ['key'=>'edge_computing','name_ar'=>'الحوسبة الطرفية وإنترنت الأشياء','name_en'=>'Edge Computing & IoT','records'=>['devices','readings','alerts']],
+]];
