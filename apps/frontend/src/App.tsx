@@ -30,7 +30,6 @@ function ResourceRoute() {
 
   return <ResourcePage key={resource.slug} resource={resource} />
 }
-
 export default function App() {
   return (
     <Suspense fallback={<Loading />}>
@@ -46,18 +45,18 @@ export default function App() {
         >
           <Route index element={<Dashboard />} />
 
-          {/* شاشات مكتوبة بإيد — فيها منطق مش متكرر (رسوم، تخصيص، إقفال) */}
+          {/* شاشات مكتوبة بإيد — فيها منطق مش متكرر */}
           <Route path="invoices" element={<Invoices />} />
           <Route path="payments" element={<Payments />} />
           <Route path="reports" element={<Reports />} />
           <Route path="periods" element={<Periods />} />
 
-          {/* باقي الموديولات — متولّدة من التعريف */}
+          {/* باقي الموديولات */}
           <Route path=":slug" element={<ResourceRoute />} />
         </Route>
 
-      <Route path="*" element={<Navigate to="/login" replace />} />
-    </Suspense>
+        <Route path="*" element={<Navigate to="/login" replace />} />
       </Routes>
+    </Suspense>
   )
 }
